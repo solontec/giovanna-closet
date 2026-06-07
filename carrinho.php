@@ -13,11 +13,14 @@ get_header();
       <h1 style="margin-bottom:24px">Seu carrinho</h1>
       <div id="carrinhoPagina"></div>
       <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <a href="produtos.html" class="btn btn-outline">Continuar comprando</a>
+       
+        <a href="<?php echo home_url('/confirmacao/'); ?>" class="btn btn-outline">Continuar comprando</a>
         <div style="text-align:right">
           <div style="font-size:13px;color:var(--muted-foreground)">Subtotal</div>
           <div id="subtotalPag" style="font-size:22px;font-weight:600"></div>
-          <a href="checkout.html" class="btn" style="margin-top:8px">Finalizar compra</a>
+          <a href="<?php echo home_url('/checkout/'); ?>" class="btn" style="margin-top:8px">
+    Finalizar compra
+</a>
         </div>
       </div>
     </div></section>
@@ -25,15 +28,15 @@ get_header();
   </main>
 </div>
 <div id="mountExtras"></div>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/products.js"></script> 
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
 <script>
 function renderPagina() {
   const box = document.getElementById("carrinhoPagina");
   const sub = document.getElementById("subtotalPag");
   const items = window.cart.items;
   if (!items.length) {
-    box.innerHTML = `<p style="color:var(--muted-foreground)">Seu carrinho está vazio. <a href="produtos.html">Ver produtos</a></p>`;
+    box.innerHTML = `<p style="color:var(--muted-foreground)">Seu carrinho está vazio. <a href="${home_url('/produtos/')}>Ver produtos</a></p>`;
     sub.textContent = brl(0); return;
   }
   box.innerHTML = items.map(it => {

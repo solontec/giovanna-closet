@@ -6,8 +6,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Closet Giovanna Barbalho — moda feminina</title>
 <meta name="description" content="Peças femininas selecionadas com carinho.">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet"
+      href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
 </head>
 <body>
 <div class="app">

@@ -20,7 +20,7 @@ get_header();
   </main>
 </div>
 <div id="mountExtras"></div>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/products.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
 </body>
 <?php get_footer(); ?>

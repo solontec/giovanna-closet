@@ -17,9 +17,9 @@ get_header(); ?>
   </main>
 </div>
 <div id="mountExtras"></div>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/card.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/products.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/card.js"></script>
 <script>
 document.getElementById("grid").innerHTML =
   [...window.CLOSET_PRODUCTS].sort((a,b)=>(b.sold||0)-(a.sold||0)).map(window.cardHTML).join("");

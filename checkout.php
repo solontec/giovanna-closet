@@ -44,8 +44,8 @@ get_header();
   </main>
 </div>
 <div id="mountExtras"></div>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/products.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
 <script>
 const s = window.getSettings();
 document.getElementById("precoMoto").textContent = s.motoboyPreco.toFixed(2).replace(".",",");
@@ -61,7 +61,7 @@ recalc();
 document.getElementById("formCheckout").addEventListener("submit",(e)=>{
   e.preventDefault();
   window.cart.clear();
-  location.href = "confirmacao.html";
+  location.href = "<?php echo home_url('/confirmacao/'); ?>";
 });
 </script>
 </body>
