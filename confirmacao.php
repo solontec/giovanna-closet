@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Confirmação
+*/
+get_header(); ?>
 <body>
 <div class="app">
   <div id="mountSidebar"></div>

@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Contato
+*/
+get_header();
+?>
 <body>
 <div class="app">
   <div id="mountSidebar"></div>

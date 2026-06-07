@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+
+/*
+Template Name: Produtos
+*/
+
+get_header(); 
+
+?>
 <body>
 <div class="app">
   <div id="mountSidebar"></div>
@@ -14,9 +22,9 @@
   </main>
 </div>
 <div id="mountExtras"></div>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/card.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/products.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/card.js"></script>
 <script>
 (function () {
   const q = (new URLSearchParams(location.search).get("q") || "").trim().toLowerCase();

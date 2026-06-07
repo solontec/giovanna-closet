@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Checkout
+*/
+get_header();
+?>
 
 <body>
 <div class="app">

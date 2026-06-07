@@ -8,7 +8,7 @@
     heroEyebrow: "Coleção · 2026",
     heroTitle: "NEWS DA SEMANA",
     heroSubtitle: "As peças novas que acabaram de chegar no closet.",
-    heroImage: "assets/images/hero.jpg",
+    heroImage: window.THEME_URL + "/assets/images/hero.jpg",
     avisoFrete: "FRETE GRÁTIS PARA TODO BRASIL ACIMA DE R$ 299",
     avisoBrinde: "BRINDE EM PEDIDOS ACIMA DE R$ 180",
     manifesto: "“Menos peças. Mais identidade. Cada item é pensado para durar estações — não tendências.”",
@@ -32,34 +32,34 @@
   };
 
   /* ---------- Layout (sidebar + topbar + carrinho + whatsapp) ---------- */
-  const NAV = [
-    { href:"index.html", label:"Início" },
-    { href:"produtos.html", label:"Produtos" },
-    { href:"mais-vendidos.html", label:"Mais vendidos" },
-    { href:"duvidas.html", label:"Dúvidas" },
-    { href:"contato.html", label:"Contato" },
-    { href:"sobre.html", label:"Sobre" },
-  ];
+ const NAV = [
+  { href: window.SITE_URL + "/", label:"Início" },
+  { href: window.SITE_URL + "/produtos/", label:"Produtos" },
+  { href: window.SITE_URL + "/mais-vendidos/", label:"Mais vendidos" },
+  { href: window.SITE_URL + "/duvidas/", label:"Dúvidas" },
+  { href: window.SITE_URL + "/contato/", label:"Contato" },
+  { href: window.SITE_URL + "/sobre/", label:"Sobre" },
+];
   const CATS = ["Tops","Vestidos","Moletons","Camisetas","Jaquetas"];
   const ADMIN = [
-    { href:"admin.html", label:"Painel administrativo" },
-    { href:"estoque.html", label:"Estoque" },
-  ];
+  { href: window.SITE_URL + "/admin/", label:"Painel administrativo" },
+  { href: window.SITE_URL + "/estoque/", label:"Estoque" },
+];
   const CONTA = [
-    { href:"login.html", label:"Entrar" },
-    { href:"cadastro.html", label:"Cadastre-se" },
-  ];
+  { href: window.SITE_URL + "/login/", label:"Entrar" },
+  { href: window.SITE_URL + "/cadastro/", label:"Cadastre-se" },
+];
 
   function renderSidebar() {
-    const here = location.pathname.split("/").pop() || "index.html";
+    const here = location.pathname.split("/").pop() || "index.php";
     const link = (i) =>
       `<li><a class="${i.href===here?'active':''}" href="${i.href}">${i.label}</a></li>`;
     const catLink = (c) =>
-      `<li><a href="produtos.html?q=${encodeURIComponent(c)}">${c}</a></li>`;
+      `<li><a href="${window.SITE_URL}/produtos/?q=${encodeURIComponent(c)}">${c}</a></li>`;
     return `
       <aside class="menu-lateral" id="menuLateral">
         <div class="logo-wrap">
-          <a href="index.html"><img src="${window.THEME_URL}/assets/images/logo-closet.png" alt="Closet Giovanna Barbalho"></a>
+          <a href="index.php"><img src="${window.THEME_URL}/assets/images/logo-closet.png" alt="Closet Giovanna Barbalho"></a>
         </div>
         <div class="menu-grupo">
           <div class="label">Navegação</div>
@@ -113,8 +113,8 @@
         <div class="carrinho-items" id="carrinhoItems"></div>
         <footer>
           <div class="total"><span>Subtotal</span><span id="carrinhoSubtotal">R$ 0,00</span></div>
-          <a href="carrinho.html" class="btn btn-outline btn-block">Ver carrinho</a>
-          <a href="checkout.html" class="btn btn-block">Finalizar compra</a>
+          <a href="carrinho.php" class="btn btn-outline btn-block">Ver carrinho</a>
+          <a href="checkout.php" class="btn btn-block">Finalizar compra</a>
         </footer>
       </aside>
     `;
@@ -131,26 +131,26 @@
           <div>
             <h4>Comprar</h4>
             <ul>
-              <li><a href="produtos.html">Todos os produtos</a></li>
-              <li><a href="mais-vendidos.html">Mais vendidos</a></li>
-              <li><a href="produtos.html?q=Vestidos">Vestidos</a></li>
-              <li><a href="produtos.html?q=Tops">Tops</a></li>
+              <li><a href="${window.SITE_URL}/produtos/">Todos os produtos</a></li>
+              <li><a href="${window.SITE_URL}/mais-vendidos/">Mais vendidos</a></li>
+              <li><a href="${window.SITE_URL}/produtos/?q=Vestidos">Vestidos</a></li>
+              <li><a href="${window.SITE_URL}/produtos/?q=Tops">Tops</a></li>
             </ul>
           </div>
           <div>
             <h4>Ajuda</h4>
             <ul>
-              <li><a href="duvidas.html">Dúvidas frequentes</a></li>
-              <li><a href="contato.html">Fale conosco</a></li>
-              <li><a href="sobre.html">Sobre nós</a></li>
+              <li><a href="${window.SITE_URL}/duvidas/">Dúvidas frequentes</a></li>
+              <li><a href="${window.SITE_URL}/contato/">Fale conosco</a></li>
+              <li><a href="${window.SITE_URL}/sobre/">Sobre nós</a></li>
             </ul>
           </div>
           <div>
             <h4>Conta</h4>
             <ul>
-              <li><a href="login.html">Entrar</a></li>
-              <li><a href="cadastro.html">Cadastre-se</a></li>
-              <li><a href="admin.html">Administrador</a></li>
+              <li><a href="${window.SITE_URL}/login/">Entrar</a></li>
+              <li><a href="${window.SITE_URL}/cadastro/">Cadastre-se</a></li>
+              <li><a href="${window.SITE_URL}/admin/">Administrador</a></li>
             </ul>
           </div>
         </div>
@@ -292,7 +292,7 @@
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         const q = input.value.trim();
-        location.href = "produtos.html" + (q ? `?q=${encodeURIComponent(q)}` : "");
+        location.href = window.SITE_URL + "/produtos/" + (q ? `?q=${encodeURIComponent(q)}` : "");
       });
     }
 

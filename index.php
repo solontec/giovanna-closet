@@ -21,7 +21,7 @@
         <p class="eyebrow" id="heroEyebrow"></p>
         <h1 id="heroTitle"></h1>
         <p id="heroSubtitle"></p>
-        <a href="produtos.html" class="btn">Ver novidades</a>
+        <a href="<?php echo home_url('/produtos/'); ?>" class="btn">Ver novidades</a>
       </div>
     </section>
 
@@ -29,8 +29,8 @@
       <div class="inner">
         <p class="tracking-luxury text-xs text-muted">Coleção outono · 2026</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a href="produtos.html" class="btn">Comprar agora</a>
-          <a href="produtos.html" class="btn btn-accent">Ver novidades</a>
+          <a href="<?php echo home_url('/produtos/'); ?>" class="btn">Comprar agora</a>
+          <a href="<?php echo home_url('/produtos/'); ?>" class="btn">Ver novidades</a>
         </div>
       </div>
     </section>
