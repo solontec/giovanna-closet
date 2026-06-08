@@ -19,7 +19,7 @@
         <p class="tracking-luxury text-xs text-muted">Coleção outono · 2026</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a href="<?php echo home_url('/produtos/'); ?>" class="btn">Comprar agora</a>
-          <a href="<?php echo home_url('/produtos/'); ?>" class="btn">Ver novidades</a>
+          <a href="<?php echo home_url('/produtos/'); ?>" class="btn">Ver noviidadessss</a>
         </div>
       </div>
     </section>

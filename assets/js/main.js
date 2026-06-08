@@ -83,24 +83,95 @@
     `;
   }
 
-  function renderTopbar() {
-    const s = loadSettings();
-    return `
-      <div class="barra-topo">
-        <div class="aviso-bar">${s.avisoFrete} · ${s.avisoBrinde}</div>
-        <div class="topo-row">
-          <button class="btn-menu-mobile" id="btnAbrirMenu" aria-label="Abrir menu">☰</button>
-          <form class="busca" id="formBusca" role="search">
-            <input type="search" id="inputBusca" placeholder="Buscar peças..." aria-label="Buscar">
-            <button type="submit" aria-label="Buscar">🔍</button>
-          </form>
-          <button class="btn-carrinho" id="btnCarrinho">
-            Carrinho <span class="badge" id="badgeCarrinho">0</span>
-          </button>
-        </div>
+  function renderSidebar() {
+
+  const here = location.pathname.split("/").pop() || "index.php";
+
+  const navIcons = {
+    "Início": "house",
+    "Produtos": "shopping-bag",
+    "Mais vendidos": "trending-up",
+    "Dúvidas": "circle-help",
+    "Contato": "mail",
+    "Sobre": "info"
+  };
+
+  const adminIcons = {
+    "Painel administrativo": "layout-grid",
+    "Estoque": "package"
+  };
+
+  const contaIcons = {
+    "Entrar": "log-in",
+    "Cadastre-se": "user-plus"
+  };
+
+  const link = (i) => `
+    <li>
+      <a class="${i.href === here ? 'active' : ''}" href="${i.href}">
+        <i data-lucide="${navIcons[i.label] || adminIcons[i.label] || contaIcons[i.label] || 'circle'}"></i>
+        <span>${i.label}</span>
+      </a>
+    </li>
+  `;
+
+  const catLink = (c) => `
+    <li>
+      <a href="${window.SITE_URL}/produtos/?q=${encodeURIComponent(c)}">
+        <i data-lucide="hanger"></i>
+        <span>${c}</span>
+      </a>
+    </li>
+  `;
+
+  return `
+    <aside class="menu-lateral" id="menuLateral">
+
+      <div class="logo-wrap">
+        <a href="${window.SITE_URL}/">
+          <img
+            src="${window.THEME_URL}/assets/images/logo-closet.png"
+            alt="Closet Giovanna Barbalho">
+        </a>
       </div>
-    `;
-  }
+
+      <div class="menu-grupo">
+        <div class="label">Navegação</div>
+        <ul>
+          ${NAV.map(link).join("")}
+        </ul>
+      </div>
+
+      <div class="menu-grupo">
+        <div class="label">Categorias</div>
+        <ul>
+          ${CATS.map(catLink).join("")}
+        </ul>
+      </div>
+
+      <div class="menu-grupo">
+        <div class="label">Administração</div>
+        <ul>
+          ${ADMIN.map(link).join("")}
+        </ul>
+      </div>
+
+      <div class="menu-grupo">
+        <div class="label">Conta</div>
+        <ul>
+          ${CONTA.map(link).join("")}
+        </ul>
+      </div>
+
+      <div class="menu-footer">
+        Frete grátis acima de R$ 299 · Brinde acima de R$ 180
+      </div>
+
+    </aside>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+  `;
+}
 
   function renderCarrinhoLateral() {
     return `
