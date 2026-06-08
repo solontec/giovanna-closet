@@ -59,7 +59,7 @@
     return `
       <aside class="menu-lateral" id="menuLateral">
         <div class="logo-wrap">
-          <a href="index.php"><img src="${window.THEME_URL}/assets/images/logo-closet.png" alt="Closet Giovanna Barbalho"></a>
+          <a href="${window.SITE_URL}/"><img src="${window.THEME_URL}/assets/images/logo-closet.png" alt="Closet Giovanna Barbalho"></a>
         </div>
         <div class="menu-grupo">
           <div class="label">Navegação</div>
@@ -113,8 +113,8 @@
         <div class="carrinho-items" id="carrinhoItems"></div>
         <footer>
           <div class="total"><span>Subtotal</span><span id="carrinhoSubtotal">R$ 0,00</span></div>
-          <a href="carrinho.php" class="btn btn-outline btn-block">Ver carrinho</a>
-          <a href="checkout.php" class="btn btn-block">Finalizar compra</a>
+          <a href="${window.SITE_URL}/carrinho/">" class="btn btn-outline btn-block">Ver carrinho</a>
+          <a href="${window.SITE_URL}/checkout/" class="btn btn-block">Finalizar compra</a>
         </footer>
       </aside>
     `;
